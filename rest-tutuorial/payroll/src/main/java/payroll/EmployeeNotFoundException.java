@@ -1,6 +1,8 @@
 package payroll;
 
-public class EmployeeNotFoundException extends X {
-    public EmployeeNotFoundException(Long id) {
+class EmployeeNotFoundException extends RuntimeException {
+
+    EmployeeNotFoundException(Long id) {
+        super("Could not find employee " + id);
     }
 }
