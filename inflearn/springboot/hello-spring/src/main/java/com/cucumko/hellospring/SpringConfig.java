@@ -1,5 +1,6 @@
 package com.cucumko.hellospring;
 
+import com.cucumko.hellospring.aop.TimeTraceAop;
 import com.cucumko.hellospring.repository.*;
 import com.cucumko.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,5 +46,11 @@ public class SpringConfig {
 ////        return new JdbcTemplateMemberRepository(dataSource);
 ////        return new JpaMemberRepository(em);
 //    }
+
+
+    @Bean
+    public TimeTraceAop timeTraceAop(){
+        return new TimeTraceAop();
+    }
 
 }
